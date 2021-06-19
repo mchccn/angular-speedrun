@@ -1,0 +1,13 @@
+.todolist > * {
+    display: block;
+}
+
+.todolist > ul > li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.todolist > ul > li::before {
+    content: "-";
+}

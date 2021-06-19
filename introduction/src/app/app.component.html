@@ -1,1 +1,28 @@
+<!-- render normal html -->
 <p>hello world</p>
+
+<!--
+    binded click event to increment method
+    templated counter property
+-->
+<button (click)="increment()">counter: {{ counter }}</button>
+
+<!-- 
+    simple todo list with angular
+-->
+<div class="todolist">
+    <!-- two way binding with ngModel and FormsModule from "@angular/forms" -->
+    <input [(ngModel)]="value" type="text" />
+
+    <!-- call methods with an argument -->
+    <button (click)="addTodo(value)">Add</button>
+
+    <!--
+        using the ngFor directive to render todos
+        with the data-index attribute
+    -->
+    <ul *ngFor="let todo of todos; let i = index" [attr.data-index]="i">
+        <li>{{ todo.todo }}<button (click)="removeTodo(i)">🗑</button></li>
+    </ul>
+</div>
+

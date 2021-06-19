@@ -6,5 +6,26 @@ import { Component } from "@angular/core";
     styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-    title = "introduction";
+    value = "";
+
+    counter = 0;
+
+    todos = [] as {
+        todo: string;
+        completed: boolean;
+    }[];
+
+    increment() {
+        this.counter++;
+    }
+
+    addTodo(todo: string) {
+        this.todos.unshift({ todo, completed: false });
+
+        this.value = "";
+    }
+
+    removeTodo(i: number) {
+        this.todos.splice(i, 1);
+    }
 }
